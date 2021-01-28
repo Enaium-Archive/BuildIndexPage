@@ -15,7 +15,7 @@ def buildIndex(path):
     if not path.__eq__(cd):
         body += '<li><a href="../">../</a><br/></li>\n'
     for file in os.listdir(path):
-        if "index.html" not in file and not file.__eq__(".git"):
+        if "index.html" not in file and "CNAME" not in file and not file.__eq__(".git"):
             body += '<li><a href="' + file + '">' + file + '</a></li>\n'
     body += '</ul>'
     template = open("./template.html", "r", encoding="UTF-8").read().replace("{{ head }}", head).replace(
